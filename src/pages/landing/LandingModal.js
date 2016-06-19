@@ -20,11 +20,17 @@ export default class LandingModal extends React.Component {
         dropDownValue: React.PropTypes.string,
         selectedDate: React.PropTypes.string,
         records: React.PropTypes.array,
-        updateDropDownValue: React.PropTypes.func
+        updateDropDownValue: React.PropTypes.func,
+        updateRecord: React.PropTypes.func
         // optionalNumber: React.PropTypes.number,
         // optionalObject: React.PropTypes.object,
         // optionalString: React.PropTypes.string
         };
+
+    constructor(props) {
+        super(props);
+        this.updateRecord = this.updateRecord.bind(this);
+    }
 
     getDateString(item) {
         var dateDisplay = item.dateStart;
@@ -34,9 +40,11 @@ export default class LandingModal extends React.Component {
         return dateDisplay;
     }
 
-    updateRecord(record, dontknow) {
-        console.log(record);
-        console.log(dontknow);
+
+    updateRecord(event) {
+        var id = parseInt(event.target.id);
+        var newValue = event.target.value;
+        this.props.updateRecord(id, newValue);
     }
 
     render() {
@@ -95,16 +103,16 @@ export default class LandingModal extends React.Component {
                             </thead>
                             <tbody>
                             {records.map(function(item, i) {
-                                var boundClick = this.updateRecord(this, i);
                                 return (
                                     <tr key={item.id}>
-                                        <td>{this.getDateString(item)} t1</td>
-                                        <td><input className="form-control" value={item.description} /></td>
+                                        <td>{this.getDateString(item)} t2</td>
+                                        <td><input id={item.id} className="form-control" defaultValue={item.description} onBlur={this.updateRecord} /></td>
                                         <td>
                                             <div className="btn-group">
                                                 <button role="button" type="button" data-toggle="dropdown" className="btn dropdown-toggle btn-default">
                                                     <span className="icon-document"></span><span className="icon-document"></span>
                                                 </button>
+
                                                 <ul role="menu" className="dropdown-menu">
                                                     {item.actions.map(function(action) {
                                                         return <li><a id="ember485" href="#/" className="ember-view">{action.description}</a></li>

@@ -1,6 +1,7 @@
 import React from 'react';
 import DateTimeField from 'react-bootstrap-datetimepicker';
 import LandingModal from './LandingModal.js';
+import Tooltip from './Tooltip.js';
 
 export default class LoginPage extends React.Component {
 
@@ -44,7 +45,9 @@ export default class LoginPage extends React.Component {
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.updateDropDownValue = this.updateDropDownValue.bind(this);
+        this.updateRecord = this.updateRecord.bind(this);
     }
+
     openModal() {
         this.setState({isOpen: true});
     }
@@ -60,13 +63,21 @@ export default class LoginPage extends React.Component {
     getSidekickError() {
         return this.state.sideKickHasError ? <div><div className="carrot"></div><span className="input-error">Sidekick is a required field.</span></div> : <div></div>;
     }
+    updateRecord(id, newValue) {
+        if(typeof newValue === 'undefined') { return; }
+        //Really would look to using an immutable library here
+        var records = this.state.records;
+        var changedList = [].concat(records);
+        var index = changedList.findIndex(x => x.id === id);
+        changedList[index].description = newValue;
+        this.setState({records: changedList});
+    }
     render() {
         var sideKickFormClasses = 'form-group '  +  (this.state.sideKickHasError ? 'has-error' : 'valid');
         var date = "06/13/2011";
         return (
             <div>
                 <div>
-                    {this.state.sideKickHasError.toString()} || {this.state.isOpen.toString()}
                     <div className="container">
                         <h3>Field Inputs and Validation</h3>
                         <div>
@@ -75,7 +86,7 @@ export default class LoginPage extends React.Component {
                                     <div className="col-md-4">
                                         <div className="form-group">
                                             <label for="comicBookHero">Favorite Comic Book Superhero
-                                                <span data-toggle="tooltip" title="" data-placement="right" className="icon-info-circle" data-original-title="Favorite Comic Book Superhero is used to tailor your payroll experience."></span>
+                                                <Tooltip text="Favorite Comic Book Superhero is used to tailor your payroll experience." />
                                             </label>
                                             <input type="text" className="form-control" id="comicBookHero" placeholder="e.g. Batman" />
                                         </div>
@@ -121,8 +132,11 @@ export default class LoginPage extends React.Component {
                         </div>
                     </div>
                 </div>
-                t9
-                <LandingModal isOpen={this.state.isOpen} testValue="thisatest1" closeModal={this.closeModal} dropDownValue={this.state.dropDownValue} selectedDate={date} records={this.state.records} updateDropDownValue={this.updateDropDownValue} />
+
+                <LandingModal isOpen={this.state.isOpen} testValue="thisatest1" closeModal={this.closeModal} dropDownValue={this.state.dropDownValue} selectedDate={date} records={this.state.records} updateDropDownValue={this.updateDropDownValue} updateRecord={this.updateRecord} />
+
+
+                {JSON.stringify(this.state.records)}
             </div>
         );
     }
