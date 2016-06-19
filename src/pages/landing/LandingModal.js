@@ -41,8 +41,8 @@ export default class LandingModal extends React.Component {
     }
 
 
-    updateRecord(event) {
-        var id = parseInt(event.target.id);
+    updateRecord(event, record) {
+        var id = parseInt(record.id);
         var newValue = event.target.value;
         this.props.updateRecord(id, newValue);
     }
@@ -59,7 +59,6 @@ export default class LandingModal extends React.Component {
                 </ModalHeader>
                 <ModalBody>
                     <div>
-                        t1
                         <form>
                             <div className="row">
                                 <div className="col-md-6">
@@ -106,7 +105,7 @@ export default class LandingModal extends React.Component {
                                 return (
                                     <tr key={item.id}>
                                         <td>{this.getDateString(item)} t2</td>
-                                        <td><input id={item.id} className="form-control" defaultValue={item.description} onBlur={this.updateRecord} /></td>
+                                        <td><input id={item.id} className="form-control" defaultValue={item.description} onBlur={(event) => this.updateRecord(event, item)} /></td>
                                         <td>
                                             <div className="btn-group">
                                                 <button role="button" type="button" data-toggle="dropdown" className="btn dropdown-toggle btn-default">
@@ -131,7 +130,7 @@ export default class LandingModal extends React.Component {
                     <button className='btn btn-default' onClick={closeModal}>
                         Close
                     </button>
-                    <button className='btn btn-primary'>
+                    <button className='btn btn-primary' onClick={closeModal}>
                         Save changes
                     </button>
                 </ModalFooter>
