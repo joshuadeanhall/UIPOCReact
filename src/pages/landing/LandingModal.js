@@ -55,7 +55,7 @@ export default class LandingModal extends React.Component {
             <Modal isOpen={isOpen} onRequestHide={closeModal}>
                 <ModalHeader>
                     <ModalClose onClick={closeModal}/>
-                    <ModalTitle>Modal title</ModalTitle>
+                    <ModalTitle>Open Modal</ModalTitle>
                 </ModalHeader>
                 <ModalBody>
                     <div>
@@ -104,7 +104,7 @@ export default class LandingModal extends React.Component {
                             {records.map(function(item, i) {
                                 return (
                                     <tr key={item.id}>
-                                        <td>{this.getDateString(item)} t2</td>
+                                        <td>{this.getDateString(item)}</td>
                                         <td><input id={item.id} className="form-control" defaultValue={item.description} onBlur={(event) => this.updateRecord(event, item)} /></td>
                                         <td>
                                             <div className="btn-group">
