@@ -1,0 +1,113 @@
+/* Colors */
+@primary:           #f47321;
+@primary-text:      #666;
+
+@accent-1:          #00b4f1;
+@accent-2:          #f1592a;
+@accent-3:          #a6ce39;
+@row-accent:        #bfecfb;
+@row-accent-muted:  rgba(191, 236, 251, 0.5);
+
+@error-red:         #e93716;
+@paycor-yellow:     #fcaf17;
+
+@charcoal-gray:     #4c4d4f;
+@dark-gray:         #6d6e71;
+@medium-gray:       #9d9fa2;
+@light-gray:        #c9cacb;
+@lighter-gray:      #eaeaea;
+@ultra-light-gray:  #f8f8f8;
+@highlight-white:   #ffffff;
+@paycor-blue-dark:  #084f8f;
+@paycor-blue:       #0082c6;
+@paycor-blue-secondary: #00b4f1;
+
+@weak:              #9299a6;
+@weak-border:       fade(@weak, 40%);
+
+
+/* Bootstrap colors */
+@bootstrap-black:                 #000;
+@bootstrap-blue:                  #049cdb;
+@bootstrap-blue-dark:             #0064cd;
+@bootstrap-green:                 #46a546;
+@bootstrap-red:                   #9d261d;
+@bootstrap-yellow:                #ffc40d;
+@bootstrap-orange:                #f89406;
+@bootstrap-pink:                  #c3325f;
+@bootstrap-purple:                #7a43b6;
+
+/* Typography */
+@paycor-font:           Arial, Helvetica, sans-serif;
+@paycorBaseFontSize:    12px;
+@paycorFontSizeExtraLarge:	@paycorBaseFontSize * 1.5; // ~18px
+@paycorFontSizeLarge:   @paycorBaseFontSize * 1.33; // ~16px
+@paycorFontSizeMedium:	@paycorBaseFontSize * 1.16; // ~14px
+@paycorFontSizeSmall:   @paycorBaseFontSize * 0.91; // ~11px
+@paycorFontSizeMini:    @paycorBaseFontSize * 0.75; // ~9px
+
+@paycorBaseLineHeight:  20px;
+
+@paycorFontWeightBold: 600;
+
+/* Component Sizing */
+@paycor-border-radius:           4px;
+@paycor-border-radius-large:     6px;
+@paycor-border-radius-small:     3px;
+
+/* Widgets */
+@paycor-widget-gradient-start: #ffffff;
+@paycor-widget-gradient-end: #e6e6e6;
+
+/* Selected Widget State */
+@paycor-selected-background-color: @accent-1;
+
+/* Dropdowns */
+@paycor-dropdown-background: #fff;
+@paycor-dropdown-border: @light-gray;
+
+/* Buttons */
+@paycor-button-background:                     #fff;
+@paycor-button-background-highlight:           darken(#fff, 10%);
+@paycor-button-border:                         @light-gray;
+
+/* Banners */
+@paycor-banner-warning: fade(@paycor-yellow, 20%);
+@paycor-banner-error: fade(@error-red, 20%);
+
+/* Focus */
+@paycor-popup-shadow: 0 1px 10px -1px rgba(0,0,0,.2);
+@paycor-popup-shadow-lower: 0 5px 10px -1px rgba(0,0,0,.2);
+@paycor-popup-shadow-heavy: 0px 2px 3px 1px rgba(50,50,50,.3);
+@paycor-input-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+@paycor-focus-border-color: fade(@accent-1, 20%);
+@paycor-focus-shadow: ~"@{paycor-input-shadow}, 0 0 8px @{paycor-focus-border-color}";
+@paycor-text-shadow: 0 1px 1px #fff;
+
+/* Readonly & Disabled */
+@paycor-disabled-opacity: 40;
+
+/* Tables */
+@paycor-table-background:                   transparent; // overall background-color
+@paycor-table-background-accent:            @lighter-gray; // for striping
+@paycor-table-background-hover:             lighten(@accent-1, 45%); // for hover
+@paycor-table-background-active-hover:      lighten(@accent-1, 40%); // for hover
+@paycor-table-border:                       @light-gray; // table and cell border
+@responsiveTableCellBorder:                 @lighter-gray;
+
+/* Media query breakpoints */
+@paycor-screen-xs-max:           480px;
+
+// Small screen / tablet
+// Note: Deprecated @screen-sm and @screen-tablet as of v3.0.1
+@paycor-screen-sm-min:           768px;
+@paycor-screen-sm-max:           991px;
+
+// Medium screen / desktop
+// Note: Deprecated @screen-md and @screen-desktop as of v3.0.1
+@paycor-screen-md-min:           992px;
+@paycor-screen-md-max:           1199px;
+
+// Large screen / wide desktop
+// Note: Deprecated @screen-lg and @screen-lg-desktop as of v3.0.1
+@paycor-screen-lg-min:           1200px;
