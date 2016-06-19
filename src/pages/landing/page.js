@@ -1,13 +1,58 @@
 import React from 'react';
 import DateTimeField from 'react-bootstrap-datetimepicker';
+import LandingModal from './LandingModal.js';
 
 export default class LoginPage extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {sideKickHasError: false};
+        this.state = {
+            sideKickHasError: false,
+            isOpen: false,
+            dropDownValue: 'Fa',
+            records: [{
+                id: 1,
+                dateStart: '01/01/2016',
+                dateEnd: '',
+                description: 'Simple Ceasar sniffed his sifter',
+                actions: [{
+                    description: 'View Request Details'
+                }]
+            },{
+                id: 2,
+                dateStart: '06/12/15',
+                dateEnd: '06/15/15',
+                description: 'Seized his knees',
+                actions: [{
+                    description: 'Cancel Request'
+                },{
+                    description: 'View/Edit Request'
+                }]
+            },{
+                id: 3,
+                dateStart: '04/27/2015',
+                dateEnd: '',
+                description: 'And sneezed',
+                actions: [{
+                    description: 'View Request Details'
+                }]
+            }
+            ]
+        };
         this.validateSideKick = this.validateSideKick.bind(this); //This probably seems weird but needed...  https://github.com/goatslacker/alt/issues/283
         this.getSidekickError = this.getSidekickError.bind(this); //This probably seems weird but needed...  https://github.com/goatslacker/alt/issues/283
+        this.openModal = this.openModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
+        this.updateDropDownValue = this.updateDropDownValue.bind(this);
+    }
+    openModal() {
+        this.setState({isOpen: true});
+    }
+    closeModal() {
+        this.setState({isOpen: false});
+    }
+    updateDropDownValue(event) {
+        this.setState({dropDownValue: event.target.value})
     }
     validateSideKick(event) {
         this.setState({sideKickHasError: event.target.value !== 'Robin'});
@@ -17,9 +62,11 @@ export default class LoginPage extends React.Component {
     }
     render() {
         var sideKickFormClasses = 'form-group '  +  (this.state.sideKickHasError ? 'has-error' : 'valid');
+        var date = "06/13/2011";
         return (
             <div>
                 <div>
+                    {this.state.sideKickHasError.toString()} || {this.state.isOpen.toString()}
                     <div className="container">
                         <h3>Field Inputs and Validation</h3>
                         <div>
@@ -68,12 +115,14 @@ export default class LoginPage extends React.Component {
                         <br /><br />
                         <h3>Modal</h3>
                         <div>
-                            <button type="button" className="btn btn-primary" aria-label="Left Align" data-ember-action="377">
+                            <button type="button" className="btn btn-primary" aria-label="Left Align" onClick={this.openModal}>
                                 <span className="icon-transfer" aria-hidden="true"></span>Open Modal
                             </button>
                         </div>
                     </div>
                 </div>
+                t9
+                <LandingModal isOpen={this.state.isOpen} testValue="thisatest1" closeModal={this.closeModal} dropDownValue={this.state.dropDownValue} selectedDate={date} records={this.state.records} updateDropDownValue={this.updateDropDownValue} />
             </div>
         );
     }
