@@ -80,7 +80,7 @@ export default class LandingModal extends React.Component {
                                 <div className="col-md-4">
                                     <div className="form-group">
                                         <label for="selectDate">Select Date<span className="required">*</span></label>
-                                        <DateTimeField mode="date" showToday='true' dateTime={selectedDate} format={format} />
+                                        <DateTimeField mode="date" showToday='true' dateTime={selectedDate}  inputFormat={format} format={format} />
                                     </div>
                                 </div>
                             </div>

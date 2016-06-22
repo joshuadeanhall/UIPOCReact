@@ -10,7 +10,7 @@ export default class Tooltip extends React.Component {
     componentDidMount() {
         $(function () {
             $('[data-toggle="tooltip"]').tooltip({
-                trigger: 'click',
+                trigger: 'focus',
                 template: '<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>'
             })
         });
@@ -18,6 +18,6 @@ export default class Tooltip extends React.Component {
 
     render() {
         
-        return <span data-toggle="tooltip" title="" data-placement="right" className="icon-info-circle" data-original-title={this.props.text}></span>;
+        return <button type="button" className="btn-icon" data-original-title={this.props.text} data-toggle="tooltip" title="" data-placement="right" ><span className="icon-info-circle" ></span></button>;
     }
 }

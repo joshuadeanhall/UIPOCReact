@@ -58,7 +58,7 @@ export default class LoginPage extends React.Component {
         this.setState({dropDownValue: event.target.value})
     }
     validateSideKick(event) {
-        this.setState({sideKickHasError: event.target.value !== 'Robin'});
+        this.setState({sideKickHasError: event.target.value !== 'Robin' && event.target.value !== ''});
     }
     getSidekickError() {
         return this.state.sideKickHasError ? <div><div className="carrot"></div><span className="input-error">Sidekick is a required field.</span></div> : <div></div>;
@@ -75,6 +75,7 @@ export default class LoginPage extends React.Component {
     render() {
         var sideKickFormClasses = 'form-group '  +  (this.state.sideKickHasError ? 'has-error' : 'valid');
         var date = "06/13/2011";
+        var format = "MM/DD/YYYY";
         return (
             <div>
                 <div>
@@ -85,16 +86,15 @@ export default class LoginPage extends React.Component {
                                 <div className="row">
                                     <div className="col-md-4">
                                         <div className="form-group">
-                                            <label for="comicBookHero">Favorite Comic Book Superhero
+                                            <label for="comicBookHero">Favorite Comic Book Superhero</label>
                                                 <Tooltip text="Favorite Comic Book Superhero is used to tailor your payroll experience." />
-                                            </label>
                                             <input type="text" className="form-control" id="comicBookHero" placeholder="e.g. Batman" />
                                         </div>
                                     </div>
                                     <div className="col-md-3">
                                         <div className={ sideKickFormClasses }>
                                             <label for="heroSideKick">Favorite Comic Book Sidekick <span className="required">*</span></label>
-                                            <input placeholder="e.g. Robin" type="text" className="form-control"  onBlur={this.validateSideKick} />
+                                            <input placeholder="e.g. Robin" type="text" className="form-control"  onChange={this.validateSideKick} />
                                             {this.getSidekickError()}
                                         </div>
                                     </div>
@@ -110,13 +110,13 @@ export default class LoginPage extends React.Component {
                                     <div className="col-md-2">
                                         <div className="form-group">
                                             <label for="startDate">Start Date</label>
-                                                <DateTimeField mode="date" showToday='true' />
+                                                <DateTimeField mode="date" showToday='true' inputFormat={format} />
                                         </div>
                                     </div>
                                     <div className="col-md-2">
                                         <div className="form-group">
                                             <label for="endDate">End Date</label>
-                                                <DateTimeField mode="date" showToday='true' />
+                                                <DateTimeField mode="date" showToday='true' inputFormat={format} />
                                         </div>
                                     </div>
                                 </div>
