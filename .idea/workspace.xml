@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55245189-1e2f-4dd6-8729-b017a7c0d286" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/app.js" afterPath="$PROJECT_DIR$/build/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/base.less" afterPath="$PROJECT_DIR$/src/common/base.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/landing/LandingModal.js" afterPath="$PROJECT_DIR$/src/pages/landing/LandingModal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/landing/Tooltip.js" afterPath="$PROJECT_DIR$/src/pages/landing/Tooltip.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/landing/page.js" afterPath="$PROJECT_DIR$/src/pages/landing/page.js" />
     </list>
     <ignored path="UIPOCReact.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,7 +23,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="page.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="page.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/landing/page.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1003">
@@ -123,11 +117,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.less" pinned="false" current-in-tab="false">
+      <file leaf-file-name="base.less" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/common/base.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1065">
-              <caret line="118" column="1" selection-start-line="118" selection-start-column="1" selection-end-line="118" selection-end-column="9" />
+            <state relative-caret-position="1218">
+              <caret line="969" column="2" selection-start-line="969" selection-start-column="2" selection-end-line="969" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -158,10 +152,10 @@
         <option value="$PROJECT_DIR$/src/pages/landing/LandingModal" />
         <option value="$PROJECT_DIR$/build/index.html" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/common/base.less" />
         <option value="$PROJECT_DIR$/src/pages/landing/Tooltip.js" />
         <option value="$PROJECT_DIR$/src/pages/landing/page.js" />
         <option value="$PROJECT_DIR$/src/pages/landing/LandingModal.js" />
+        <option value="$PROJECT_DIR$/src/common/base.less" />
       </list>
     </option>
   </component>
@@ -390,15 +384,15 @@
       <option name="presentableId" value="Default" />
       <updated>1466348169585</updated>
       <workItem from="1466348170887" duration="10179000" />
-      <workItem from="1466358609399" duration="12847000" />
+      <workItem from="1466358609399" duration="13450000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23026000" />
+    <option name="totallyTimeSpent" value="23629000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="7" />
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -573,14 +567,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/base.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="118" column="1" selection-start-line="118" selection-start-column="1" selection-end-line="118" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/landing/Tooltip.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -606,6 +592,14 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/base.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1218">
+          <caret line="969" column="2" selection-start-line="969" selection-start-column="2" selection-end-line="969" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
