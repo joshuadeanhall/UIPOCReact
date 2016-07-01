@@ -110,13 +110,13 @@ export default class LoginPage extends React.Component {
                                     <div className="col-md-2">
                                         <div className="form-group">
                                             <label for="startDate">Start Date</label>
-                                                <DateTimeField mode="date" showToday='true' inputFormat={format} />
+                                                <DateTimeField mode="date" showToday='true' />
                                         </div>
                                     </div>
                                     <div className="col-md-2">
                                         <div className="form-group">
                                             <label for="endDate">End Date</label>
-                                                <DateTimeField mode="date" showToday='true' inputFormat={format} />
+                                                <DateTimeField mode="date" showToday='true' />
                                         </div>
                                     </div>
                                 </div>
